@@ -32,17 +32,11 @@ $ docker run --rm hello-world
 
 ### ELK Stack のセットアップ
 
-インストール
-
-```bash
-git clone https://github.com/deviantony/docker-elk.git
-```
-
-起動
+インストールと起動
 
 ```bash
 docker-compose up setup
-docker compose up -d # インストールに30分以上かかることがある
+docker-compose up # インストールに30分以上かかることがある
 # [+] Running 5/5er-elk_elk  Creating                                                                                   0.0s 
 # ✔ Network docker-elk_elk                Created                                                                      0.0s 
 # ✔ Volume "docker-elk_elasticsearch"     Created                                                                      0.0s 
@@ -75,7 +69,7 @@ curl http://localhost:9200 -u elastic:changeme
 }
 ```
 
-Kibana の動作チェック
+Kibana の疎通確認
 
 ```bash
 # 数分待つ
@@ -83,7 +77,7 @@ open http://127.0.0.1:5601
 ```
 
 ### 課題
-重すぎて動かない。`free` コマンドを実行すると以下のようになっていて、メモリが足りないことがわかる。  
+そのまま実行すると重すぎて動かない。`free` コマンドを実行すると以下のようになっていて、メモリが足りないことがわかる。  
 
 
 |  | total | used | free | shared | buff/cache | available |
