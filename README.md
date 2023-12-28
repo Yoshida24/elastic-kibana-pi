@@ -111,9 +111,15 @@ CONTAINER ID   NAME                         CPU %     MEM USAGE / LIMIT     MEM 
 7e524ac92f1e   docker-elk-logstash-1        2.31%     413.9MiB / 11.68GiB   3.46%     5.35kB / 2.67kB   0B / 279kB    66  
 994526a79409   docker-elk-kibana-1          0.78%     545.2MiB / 11.68GiB   4.56%     1.1MB / 518kB     0B / 4.1kB    12  
 8a691caf9182   docker-elk-elasticsearch-1   275.09%   572.3MiB / 11.68GiB   4.79%     31.2kB / 23.1kB   0B / 1.34MB   11  
+  
+メモリに余裕がなさすぎるのでまともに使えるものにはならないかもしれない。
+Docker Image を省メモリなものに変更する方法を検討することは docker-elk を使っている限りは難しい可能性がある。
+`docker.elastic.co/elasticsearch/elasticsearch` に依存してしまっているので、Image をそもそも変更できないため。
+根本的に2GBモデルで動かすのに無理があるので、4GBモデル以上あることは必須になるかも。
 
-### Next
-この設定をラズパイで試してみて、実際にうまくいくか確認する。
+### ラズパイで動かしてみる
+この設定をラズパイで試してみて、実際にうまくいくか確認する。  
+→ docker-compose V2 の導入に苦戦。
 
 ### 参考
 - [Qiita - Linuxサーバー環境のDockerインストールメモ](https://qiita.com/ohhara_shiojiri/items/486a54ad895d6bb3144e)
